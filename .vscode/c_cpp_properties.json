@@ -11,9 +11,9 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.17134.0",
-            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.14.26428/bin/Hostx64/x64/cl.exe",
+            "compilerPath": "",
             "cStandard": "c11",
-            "intelliSenseMode": "msvc-x64",
+            "intelliSenseMode": "gcc-x64",
             "cppStandard": "c++11"
         }
     ],

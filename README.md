@@ -9,5 +9,7 @@ Particle filter assignment for Udacity.
 
 
 # TODO:
+* Implement resample()
+* Implement updateWeights()
 * Implement a simulator that works without the need for websockets.
 * Implement destructor.

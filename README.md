@@ -9,5 +9,5 @@ Particle filter assignment for Udacity.
 
 
 # TODO:
-* Implement a simulator that works in without the need for websockets.
+* Implement a simulator that works without the need for websockets.
 * Implement destructor.

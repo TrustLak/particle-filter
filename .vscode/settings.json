@@ -34,6 +34,25 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "cctype": "cpp",
+        "cstdarg": "cpp",
+        "ctime": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "strstream": "cpp",
+        "*.tcc": "cpp",
+        "chrono": "cpp",
+        "clocale": "cpp",
+        "cwctype": "cpp",
+        "forward_list": "cpp",
+        "unordered_map": "cpp",
+        "functional": "cpp",
+        "numeric": "cpp",
+        "ratio": "cpp",
+        "thread": "cpp",
+        "cinttypes": "cpp",
+        "tuple": "cpp",
+        "typeindex": "cpp"
     }
 }

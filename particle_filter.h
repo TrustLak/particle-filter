@@ -25,6 +25,7 @@ class ParticleFilter{
         double *std_; 
         vector<double> weights_;
         vector<Particle> particles_;
+        vector<Particle> new_particles_;
 
         // add sampling engine to avoid reinitalizing everytime
         random_device rand_dev_{};

@@ -23,7 +23,8 @@ void ParticleFilter::init(double x, double y, double theta, double std[], int n_
 
     num_particles_ = n_particles;
     weights_.resize(num_particles_); 
-    particles_.resize(num_particles_); 
+    particles_.resize(num_particles_);
+    new_particles_.resize(num_particles_);
     std_ = std;
 
     // TODO: fix random seed
@@ -37,10 +38,12 @@ void ParticleFilter::init(double x, double y, double theta, double std[], int n_
         particles_[i].y = y + y_noise_(engine_);
         particles_[i].theta = theta + theta_noise_(engine_);
         particles_[i].weight = 1.0;
+        // initialize new_particles_ which is a placeholder for resampling.
+        new_particles_[i] = particles_[i];
     }
 
     is_initialized_ = true;
-    cout << "Successfully executed init(..)" << endl;
+
 };
 
 
@@ -60,10 +63,14 @@ void ParticleFilter::predict(double delta_t, double velocity, double yaw_rate){
             particles_[i].theta += theta_noise_(engine_) + yaw_rate * delta_t;
         }
     }
-    cout << "Successfully predicted" << endl;
 };
 
 
 void ParticleFilter::resample(){
-    cout << "Successfully executed resample()" << endl;
+    
+    discrete_distribution<int> idx(weights_.begin(), weights_.end());
+    for (int i = 0; i < num_particles_; i++){
+        new_particles_[i] = particles_[idx(engine_)];
+    }
+    particles_ = new_particles_;
 };

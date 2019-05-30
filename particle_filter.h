@@ -43,10 +43,11 @@ class ParticleFilter{
         void init(double x, double y, double theta, double std[], int n_particles);
         void predict(double delta_t, double velocity, double yaw_rate);  // need not use std_pos here...
         void dataAssociation(vector<LandmarkObs> predicted, vector<LandmarkObs>& observations);
-        void updateWeights(double sensor_range, double std_landmark[], const vector<LandmarkObs> &observations, const Map &map_landmarks);
+        void updateWeights(double sensor_range, double std_landmark[], 
+                            const vector<LandmarkObs> &observations, const Map &map_landmarks);
         void resample();
         Particle SetAssociations(Particle& particle, const vector<int>& associations,
-		                     const vector<double>& sense_x, const vector<double>& sense_y);
+		                    const vector<double>& sense_x, const vector<double>& sense_y);
         string getAssociations(Particle best);
         string getSenseX(Particle best);
         string getSenseY(Particle best);

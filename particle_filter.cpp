@@ -65,7 +65,7 @@ void ParticleFilter::predict(double delta_t, double velocity, double yaw_rate){
     }
 };
 
-
+void updateWeights(double )
 void ParticleFilter::resample(){
     
     discrete_distribution<int> idx(weights_.begin(), weights_.end());

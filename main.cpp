@@ -17,13 +17,5 @@ int main(){
     ParticleFilter f(x,y,theta,std, 100);
 
 
-    // test predict
-
-    // test dataAssociation
-
-    // test updateWeights
-
-    // test resample
-
     return 0;
 }

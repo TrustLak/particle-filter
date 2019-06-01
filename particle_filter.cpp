@@ -100,7 +100,7 @@ void ParticleFilter::prediction(double delta_t, double velocity, double yaw_rate
         if (fabs(yaw_rate) == 0){
             particles_[i].x += x_noise_(engine_) + velocity * delta_t * cos(particles_[i].theta);
             particles_[i].y += y_noise_(engine_) + velocity * delta_t * sin(particles_[i].theta);
-            particles_[i].theta += theta_noise_(engine_) //+ yaw_rate * delta_t;
+            particles_[i].theta += theta_noise_(engine_); //+ yaw_rate * delta_t;
         }
         else {
             particles_[i].x += x_noise_(engine_) + 
@@ -131,6 +131,9 @@ void ParticleFilter::updateWeights(const vector<LandmarkObs> &observations){
                 double particle_dist = pow(particles_[i].x - landmarks_[k].x_f, 2) + pow(particles_[i].y - landmarks_[k].y_f, 2);
                 if (particle_dist <= sensor_range_*sensor_range_){
                     delta_distances.push_back( pow(x_map - landmarks_[k].x_f, 2) + pow(y_map - landmarks_[k].y_f, 2) );
+                }
+                else{
+                    delta_distances.push_back(9999999.0);
                 }
             }
             // associate with nearest landmark 

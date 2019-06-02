@@ -122,7 +122,7 @@ void ParticleFilter::updateWeights(const vector<LandmarkObs> &observations){
         for (unsigned int j = 0; j < observations.size(); j++){
             // vehicle to map coordinates
             double x_map = observations[j].x * cos(particles_[i].theta) - observations[j].y * sin(particles_[i].theta) + particles_[i].x;
-            double y_map = observations[j].y * sin(particles_[i].theta) + observations[j].y * cos(particles_[i].theta) + particles_[i].y;
+            double y_map = observations[j].x * sin(particles_[i].theta) + observations[j].y * cos(particles_[i].theta) + particles_[i].y;
 
             // landmarks within sensor range
             vector<double> delta_distances; // landmark-observation mean values; assume very large value initially  

@@ -1,14 +1,21 @@
 # Particle-filter
 Particle filter assignment for Udacity.
 
-# Changes from the original code:
-* Changed some of private member variables in ParticleFilter.
-* Added `std_pos` as ParticleFilter class member to avoid reinitialization on each function call.
-* `num_particles` can now be initialized via init().
-* Added a new constructor that does the same work as init().
+## Running the Code
+This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
 
+This repository includes two files that can be used to set up and install uWebSocketIO for either Linux or Mac systems. For windows you can use either Docker, VMware, or even Windows 10 Bash on Ubuntu to install uWebSocketIO.
 
-# TODO:
-* Implement updateWeights()
-* Implement a simulator that works without the need for websockets.
-* Implement destructor.
+Once the install for uWebSocketIO is complete, the main program can be built and ran by doing the following from the project top directory.
+
+1. mkdir build
+2. cd build
+3. cmake ..
+4. make
+5. ./particle_filter
+
+Alternatively some scripts have been included to streamline this process, these can be leveraged by executing the following in the top directory of the project:
+
+1. ./clean.sh
+2. ./build.sh
+3. ./run.sh
